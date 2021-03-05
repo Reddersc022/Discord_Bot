@@ -1,5 +1,6 @@
 # Discord_Bot
 by: @Reddersc022, redders02#8850
+bot: Charlie's bot#3117
 
 
 COMMANDS:
