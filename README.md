@@ -9,7 +9,7 @@ Keyphrase | Explanation
 --------- | -----------
 !!help | Displays help text
 !!hello_world | Simple hello world
-!!wilbur | gets rhythm to play music by Wilbur Soot
+!!wilbur | Gives you a link to a good playlist
 !!reminder | Sets a reminder for the day/time provided
 !!kill | Halts execution
 

@@ -56,9 +56,8 @@ async def on_ready():
     """Invoked when bot connects to discord, and is ready"""
     log("connected")
 
-    # TODO: CHANGE!!!
     channel = bot.get_channel(CHANNEL)
-    message = "I'm back!"
+    message = "Hi, I'm Charlie's bot, my prefix is `!!`.\nType !!help for more info"
     await channel.send(message)
     log("message sent", message=message)
 
@@ -132,7 +131,7 @@ async def helloWorld(ctx):
 async def playWilbur(ctx):
     """Gets rhythm to play the following playlist"""
     log("command", author=ctx.author.name + ctx.author.discriminator, message=ctx.message.content)
-    message = f"!play https://www.youtube.com/watch?v=M9jSeLeHZI0&list=PLToII9A82qUbBMDaeyDWBYYQPNbWoJYgc"
+    message = f"copy-paste:`!play https://www.youtube.com/watch?v=M9jSeLeHZI0&list=PLToII9A82qUbBMDaeyDWBYYQPNbWoJYgc`"
 
     await ctx.send(message)
     log("message sent", message=message)
