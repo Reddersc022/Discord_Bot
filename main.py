@@ -2,8 +2,6 @@
 
 # Imports
 import os
-import discord
-import json
 import time
 
 from dotenv import load_dotenv
@@ -25,12 +23,12 @@ bot.remove_command("help")
 def log(type_: str, **kwargs):
     """For logging events"""
 
-    l = [f"type: {type_}"]
+    lst = [f"type: {type_}"]
     for key in kwargs:
-        l.append(f"{key}: {kwargs[key]}")
+        lst.append(f"{key}: {kwargs[key]}")
 
     with open("log.txt", "a") as f:
-        f.write(f"{time.strftime('%m/%d/%Y, %H:%M:%S')} | {', '.join(l)}\n")
+        f.write(f"{time.strftime('%m/%d/%Y, %H:%M:%S')} | {', '.join(lst)}\n")
 
 
 # Bot functions
@@ -39,7 +37,7 @@ async def helpMsg(ctx):
     message = f"""
     Prefix: `!!`
     Display this message: `help`
-    Other commands: {COMM_STR}
+    All commands: {COMM_STR}
     
     Made by: redders02#8850
 """
@@ -58,8 +56,8 @@ async def helloWorld(ctx):
 
 @bot.event
 async def on_command_error(ctx, error):
-    if ctx.message not in COMMANDS:
-        await ctx.send(error)
+    """Catches errors"""
+    await ctx.send(error)
     log("error", error=error, author=ctx.author.name + ctx.author.discriminator)
 
 

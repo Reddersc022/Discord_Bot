@@ -1,2 +1,2 @@
-# Ignore .env as holds secrets
 .env
+log.txt

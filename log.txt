@@ -4,3 +4,6 @@
 03/06/2021, 11:37:12 | type: message sent, message: Hello, redders02#8850!, author: redders028850
 03/06/2021, 11:38:19 | type: started
 03/06/2021, 11:38:23 | type: error, error: Command "boo" is not found, author: redders028850
+03/06/2021, 14:07:06 | type: started
+03/06/2021, 14:09:03 | type: error, error: Command "idk" is not found, author: redders028850
+03/06/2021, 14:09:05 | type: help, author: redders028850
