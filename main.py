@@ -17,7 +17,7 @@ COMM_STR = ", ".join(f"`{comm}`" for comm in COMMANDS)
 # Setup environment and bot
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
-CHANNEL = int(os.getenv("CHANNEL"))
+CHANNELS = map(int, os.getenv("CHANNELS").split(","))
 
 bot = commands.Bot(command_prefix="!!")
 bot.remove_command("help")
@@ -56,9 +56,12 @@ async def on_ready():
     """Invoked when bot connects to discord, and is ready"""
     log("connected")
 
-    channel = bot.get_channel(CHANNEL)
     message = "Hi, I'm Charlie's bot, my prefix is `!!`.\nType !!help for more info"
-    await channel.send(message)
+
+    for ch in CHANNELS:
+        channel = bot.get_channel(ch)
+        await channel.send(message)
+
     log("message sent", message=message)
 
     backupTimer = 0
@@ -73,6 +76,7 @@ async def on_ready():
             if time.gmtime() >= time.struct_time(rem[0]):
                 # Send then delete
                 message = f"Reminder: {rem[1]}"
+                channel = bot.get_channel(rem[2])
                 await channel.send(message)
 
                 del reminders[i]
@@ -149,7 +153,7 @@ async def reminder(ctx, *args):
 
     # Not help
     else:
-        reminders.append((time.strptime(" ".join(args[:2]), "%d-%m-%Y %H:%M:%S"), " ".join(args[2:])))
+        reminders.append((time.strptime(" ".join(args[:2]), "%d-%m-%Y %H:%M:%S"), " ".join(args[2:]), ctx.channel.id))
         log("reminder set", time=" ".join(args[:2]))
 
 
