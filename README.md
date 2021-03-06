@@ -4,11 +4,12 @@ by: @Reddersc022, redders02#8850\
 bot: Charlie's bot#3117
 
 
-COMMANDS:\
+COMMANDS:
 Keyphrase | Explanation
 --------- | -----------
 !!help | Displays help text
 !!hello_world | Simple hello world
+!!wilbur | gets rhythm to play music by Wilbur Soot
 
 
 TODO:
@@ -19,4 +20,6 @@ TODO:
 
 
 Help from:\
-https://realpython.com/how-to-make-a-discord-bot-python/
+https://realpython.com/how-to-make-a-discord-bot-python/ \
+Code:\
+https://github.com/Reddersc022/Discord_Bot
