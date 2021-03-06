@@ -21,14 +21,18 @@ bot.remove_command("help")
 
 # My functions
 def log(type_: str, **kwargs):
-    """For logging events"""
+    """For logging events
+    Common type_s:
+        - command, message sent, error
+    Common kwargs:
+        - author, message"""
 
     lst = [f"type: {type_}"]
     for key in kwargs:
         lst.append(f"{key}: {kwargs[key]}")
 
     with open("log.txt", "a") as f:
-        f.write(f"{time.strftime('%m/%d/%Y, %H:%M:%S')} | {', '.join(lst)}\n")
+        f.write(f"{time.strftime('%m/%d/%Y@%H:%M:%S')} | {', '.join(lst)}\n")
 
 
 # Bot functions
@@ -42,7 +46,8 @@ async def helpMsg(ctx):
     Made by: redders02#8850
 """
     await ctx.send(message)
-    log("help", author=ctx.author.name + ctx.author.discriminator)
+    log("command", author=ctx.author.name + ctx.author.discriminator, message=ctx.message.content)
+    log("message sent", message=message)
 
 
 @bot.command("hello_world")
@@ -51,7 +56,8 @@ async def helloWorld(ctx):
     message = f"Hello, {ctx.author}!"
 
     await ctx.send(message)
-    log("message sent", message=message, author=ctx.author.name + ctx.author.discriminator)
+    log("command", author=ctx.author.name + ctx.author.discriminator, message=ctx.message.content)
+    log("message sent", message=message)
 
 
 @bot.event
