@@ -1,15 +1,22 @@
 # Discord_Bot
-by: @Reddersc022, redders02#8850
+
+by: @Reddersc022, redders02#8850\
 bot: Charlie's bot#3117
 
 
-COMMANDS:
+COMMANDS:\
 Keyphrase | Explanation
 --------- | -----------
-?help | Displays help text
+!!help | Displays help text
+!!hello_world | Simple hello world
 
 
 TODO:
- - [ ] Make simple backend
- - [ ] Add commands
+ - [x] Make simple backend
+ - [x] Add commands
  - [ ] Add more complex commands
+ - [x] Improve logging
+
+
+Help from:\
+https://realpython.com/how-to-make-a-discord-bot-python/

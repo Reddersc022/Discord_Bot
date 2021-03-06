@@ -1,0 +1,6 @@
+03/06/2021, 11:36:49 | type: started
+03/06/2021, 11:36:59 | type: help, author: redders028850
+03/06/2021, 11:37:03 | type: error, error: Command "jello_world" is not found, author: redders028850
+03/06/2021, 11:37:12 | type: message sent, message: Hello, redders02#8850!, author: redders028850
+03/06/2021, 11:38:19 | type: started
+03/06/2021, 11:38:23 | type: error, error: Command "boo" is not found, author: redders028850
