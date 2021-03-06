@@ -10,13 +10,16 @@ Keyphrase | Explanation
 !!help | Displays help text
 !!hello_world | Simple hello world
 !!wilbur | gets rhythm to play music by Wilbur Soot
+!!reminder | Sets a reminder for the day/time provided
+!!kill | Halts execution
 
 
 TODO:
  - [x] Make simple backend
  - [x] Add commands
- - [ ] Add more complex commands
+ - [x] Add more complex commands
  - [x] Improve logging
+ - [ ] Make better
 
 
 Help from:\
