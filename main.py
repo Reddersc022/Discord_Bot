@@ -92,7 +92,7 @@ async def on_message(message):
     """Just a lil' inside joke"""
     await bot.process_commands(message)
 
-    if re.search(r"kids", message.content) and not message.author.bot:
+    if re.search(r"kids", message.content.lower()) and not message.author.bot:
         await message.reply("Joe likes kids")
         log("reply", author=message.author, message="Joe likes kids")
 
@@ -136,6 +136,16 @@ async def playWilbur(ctx):
     """Gets rhythm to play the following playlist"""
     log("command", author=ctx.author.name + ctx.author.discriminator, message=ctx.message.content)
     message = f"copy-paste:`!play https://www.youtube.com/watch?v=M9jSeLeHZI0&list=PLToII9A82qUbBMDaeyDWBYYQPNbWoJYgc`"
+
+    await ctx.send(message)
+    log("message sent", message=message)
+
+
+@bot.command("minecraft")
+async def playWilbur(ctx):
+    """Gets rhythm to play the following playlist"""
+    log("command", author=ctx.author.name + ctx.author.discriminator, message=ctx.message.content)
+    message = f"copy-paste:`!play https://www.youtube.com/watch?v=cPJUBQd-PNM&list=PLhVQfRIFpqb0bsHButNuF3P_LLXHoqWqS`"
 
     await ctx.send(message)
     log("message sent", message=message)
