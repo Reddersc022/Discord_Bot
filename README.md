@@ -10,6 +10,7 @@ Keyphrase | Explanation
 !!help | Displays help text
 !!hello_world | Simple hello world
 !!wilbur | Gives you a link to a good playlist
+!!minecraft | Gives you a link to a less good playlist
 !!reminder | Sets a reminder for the day/time provided
 !!kill | Halts execution
 
