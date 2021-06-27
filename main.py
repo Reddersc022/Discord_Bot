@@ -1,13 +1,10 @@
 """Main script for my discord bot"""
 
 # Imports
-import os
 import time
-import re
 import asyncio
 import json
 
-from dotenv import load_dotenv
 from discord.ext import commands
 
 # Constants
@@ -15,9 +12,11 @@ COMMANDS = ["help", "hello_world", "wilbur", "reminder"]
 COMM_STR = ", ".join(f"`{comm}`" for comm in COMMANDS)
 
 # Setup environment and bot
-load_dotenv()
-TOKEN = os.getenv('DISCORD_TOKEN')
-CHANNELS = map(int, os.getenv("CHANNELS").split(","))
+with open("vars.json", "r") as f:
+    data = json.load(f)
+
+TOKEN = data["TOKEN"]
+CHANNELS = data["CHANNELS"]
 
 bot = commands.Bot(command_prefix="!!")
 bot.remove_command("help")
@@ -31,9 +30,9 @@ with open("reminders.json", "r") as f:
 # My functions
 def log(type_: str, **kwargs):
     """For logging events
-    Common type_s:
+    Common `type_`s:
         - connected, command, message sent, error, reply, reminder set, halting
-    Common kwargs:
+    Common `kwargs`:
         - author, message
     """
 
@@ -92,7 +91,7 @@ async def on_message(message):
     """Just a lil' inside joke"""
     await bot.process_commands(message)
 
-    if re.search(r"kids", message.content.lower()) and not message.author.bot:
+    if "kids" in message.content.lower() and not message.author.bot:
         await message.reply("Joe likes kids")
         log("reply", author=message.author, message="Joe likes kids")
 
@@ -145,7 +144,7 @@ async def playWilbur(ctx):
 async def playWilbur(ctx):
     """Gets rhythm to play the following playlist"""
     log("command", author=ctx.author.name + ctx.author.discriminator, message=ctx.message.content)
-    message = f"copy-paste:`!play https://www.youtube.com/watch?v=cPJUBQd-PNM&list=PLhVQfRIFpqb0bsHButNuF3P_LLXHoqWqS`"
+    message = f"copy-paste:`!play https://open.spotify.com/playlist/0LLmofiC0ikfWpHZkafJdD?si=7034dd070e654b13`"
 
     await ctx.send(message)
     log("message sent", message=message)
