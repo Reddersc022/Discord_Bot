@@ -1,3 +1,5 @@
 venv/
-log.txt
+.log
 *.json
+__pycache__/
+.vscode/

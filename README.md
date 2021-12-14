@@ -7,7 +7,7 @@ bot: Charlie's bot#3117
 COMMANDS:
 Keyphrase | Explanation
 --------- | -----------
-
+help | Displays the help message
 
 BACKGROUND:
 Action | Reaction
