@@ -8,6 +8,7 @@ COMMANDS:
 Keyphrase | Explanation
 --------- | -----------
 help | Displays the help message
+kill ... | If provided with the correct token, stops execution
 
 BACKGROUND:
 Action | Reaction
