@@ -18,11 +18,11 @@ Message sent that ends in "a" or "er" | Replies with "...? I barely know her!"
 
 
 TODO:
- - [ ] Make simple backend
- - [ ] Add commands
+ - [*] Make simple backend
+ - [*] Add commands
  - [ ] Add more complex commands
  - [ ] Improve logging
- - [ ] I barely know her jokes
+ - [*] I barely know her jokes
 
 
 Help from:  
