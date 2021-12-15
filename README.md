@@ -12,7 +12,8 @@ help | Displays the help message
 BACKGROUND:
 Action | Reaction
 ------ | --------
-
+Message sent that includes 'I'm', 'Im, or 'I am' | Replies with "Hi... , I'm a bot"
+Message sent that ends in "a" or "er" | Replies with "...? I barely know her!"
 
 
 TODO:
