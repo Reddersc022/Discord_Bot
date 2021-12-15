@@ -25,20 +25,28 @@ class C_General(Cog):
 
     @Cog.listener()
     async def on_message(self, message: Message):
-        msg = message.content
+        msg = message.content.lower()
 
         # Jokes
-        last_word = msg.split()[-1]
-        for c in ".!?)":
-            last_word = last_word.replace(c, "")
-
         if (
-            not last_word == "her"
-            and (last_word.endswith("er") or last_word.endswith("a"))
-            and time.time() - self.last_joke > JOKE_COOLDOWN
-        ):
-            await message.reply(f"{last_word}? I barely know her!")
-            self.last_joke = time.time()
+            time.time() - self.last_joke > JOKE_COOLDOWN and
+            message.author != self.bot.user
+            ):
+            for i in ("i'm", "im", "i am"):
+                if i in msg:
+                    await message.reply(f"Hi {msg[msg.index(i)+len(i):]}, I'm a bot!")
+                    self.last_joke = time.time()
+                    break
+            else:
+                last_word = msg.split()[-1]
+                for c in ".!?)":
+                    last_word = last_word.replace(c, "")
+
+                if (
+                    not last_word == "her" and (last_word.endswith("er") or last_word.endswith("a"))
+                ):
+                    await message.reply(f"{last_word.title()}? I barely know her!")
+                    self.last_joke = time.time()
 
     @command()
     async def kill(self, ctx: Context):
