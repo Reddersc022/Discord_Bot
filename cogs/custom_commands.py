@@ -26,12 +26,11 @@ class C_Custom_Commands(Cog):
         )
 
     @Cog.listener()
-    async def on_message(self, ctx: Context):
-        msg: Message = ctx.message
+    async def on_message(self, msg: Message):
         if msg.author != self.bot.user:
             start = msg.content.split()[0]
             if start in self.commands.keys():
-                await ctx.channel.send(self.__format_reply(self.commands[start], msg))
+                await msg.channel.send(self.__format_reply(self.commands[start], msg))
 
     @command(aliases=("editcom",))
     async def addcom(self, ctx: Context):
