@@ -21,4 +21,5 @@ channels: List[int] = vars_["CHANNELS"]
 
 bot = commands.Bot(command_prefix="!c ", activity=discord.Game("!c help"))
 bot.load_extension("cogs.general")
+bot.load_extension("cogs.custom_commands")
 bot.run(token)
