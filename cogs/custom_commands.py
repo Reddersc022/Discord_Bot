@@ -19,15 +19,12 @@ class C_Custom_Commands(Cog):
     def __format_reply(self, s: str, m: Message) -> str:
         _msg = m.content.split()[1:]
         return s.format(
-            **{i: j for i, j in enumerate(_msg)},
-            **{
-                "author": m.author.display_name,
-            }
+            *_msg, **{"author": m.author.display_name}
         )
 
     @Cog.listener()
     async def on_message(self, msg: Message):
-        if msg.author != self.bot.user or not msg.content.startswith("!c"):
+        if msg.author != self.bot.user and not msg.content.startswith("!c"):
             start = msg.content.split()[0]
             if start in self.commands.keys():
                 await msg.channel.send(self.__format_reply(self.commands[start], msg))
@@ -36,7 +33,7 @@ class C_Custom_Commands(Cog):
     async def addcom(self, ctx: Context):
         msg: Message = ctx.message
         _msg = msg.content.split()
-        self.commands[_msg[0]] = _msg[1:]
+        self.commands[_msg[2]] = " ".join(_msg[3:])
 
     @command()
     async def delcom(self, ctx: Context):

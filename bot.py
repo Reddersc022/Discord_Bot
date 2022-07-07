@@ -17,7 +17,6 @@ with open("vars.json", "r") as f:
 
 app_id: str = vars_["APP-ID"]
 token: str = vars_["TOKEN"]
-channels: List[int] = vars_["CHANNELS"]
 
 bot = commands.Bot(command_prefix="!c ", activity=discord.Game("!c help"))
 bot.load_extension("cogs.general")
