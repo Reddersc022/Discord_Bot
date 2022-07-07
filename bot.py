@@ -9,7 +9,7 @@ logging.basicConfig(
 
 import json
 import discord
-from typing import List
+from typing import Dict, List
 from discord.ext import commands
 
 with open("vars.json", "r") as f:
