@@ -1,6 +1,6 @@
 # Discord_Bot
 
-by: @Reddersc022, redders02#8850  
+by: @ch0rl, chorl#2222  
 bot: Charlie's bot#3117
 
 
@@ -10,22 +10,8 @@ Keyphrase | Explanation
 help | Displays the help message
 kill ... | If provided with the correct token, stops execution
 
-BACKGROUND:
-Action | Reaction
------- | --------
-Message sent that includes 'I'm', 'Im, or 'I am' | Replies with "Hi... , I'm a bot"
-Message sent that ends in "a" or "er" | Replies with "...? I barely know her!"
-
-
-TODO:
- - [*] Make simple backend
- - [*] Add commands
- - [ ] Add more complex commands
- - [ ] Improve logging
- - [*] I barely know her jokes
-
 
 Help from:  
 https://realpython.com/how-to-make-a-discord-bot-python/  
 Code:  
-https://github.com/Reddersc022/Discord_Bot
+https://github.com/ch0rl/Discord_Bot
