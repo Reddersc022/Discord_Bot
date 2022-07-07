@@ -13,7 +13,7 @@ class C_Custom_Commands(Cog):
     def __init__(self, bot: Bot):
         self.bot = bot
 
-        with open("commands.json", "a") as f:
+        with open("commands.json") as f:
             self.commands: Dict[str, str] = json.load(f)
 
     async def __format_reply(self, s: str, ctx: Message) -> str:
@@ -31,7 +31,7 @@ class C_Custom_Commands(Cog):
         if start in self.commands.keys():
             await ctx.channel.send(self.__format_reply(self.commands[start], ctx))
 
-    @command(aliases=("editcom"))
+    @command(aliases=("editcom",))
     async def addcom(self, ctx: Message):
         self.commands[ctx.message.split()[0]] = ctx.message.split()[1:]
 
@@ -39,3 +39,7 @@ class C_Custom_Commands(Cog):
     async def delcom(self, ctx: Message):
         if ctx.message.split()[0] in self.commands:
             del self.commands[ctx.message.split()[0]]
+
+
+def setup(bot: Bot):
+    bot.add_cog(C_Custom_Commands(bot))
