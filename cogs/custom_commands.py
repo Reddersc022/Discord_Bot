@@ -27,7 +27,7 @@ class C_Custom_Commands(Cog):
 
     @Cog.listener()
     async def on_message(self, msg: Message):
-        if msg.author != self.bot.user:
+        if msg.author != self.bot.user or not msg.content.startswith("!c"):
             start = msg.content.split()[0]
             if start in self.commands.keys():
                 await msg.channel.send(self.__format_reply(self.commands[start], msg))
