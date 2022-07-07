@@ -16,7 +16,7 @@ class C_Custom_Commands(Cog):
         with open("commands.json") as f:
             self.commands: Dict[str, str] = json.load(f)
 
-    async def __format_reply(self, s: str, m: Message) -> str:
+    def __format_reply(self, s: str, m: Message) -> str:
         _msg = m.content.split()[1:]
         return s.format(
             **{i: j for i, j in enumerate(_msg)},
