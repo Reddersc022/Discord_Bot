@@ -1,0 +1,46 @@
+\documentclass[11pt, titlepage]{report}
+
+\usepackage[hyphens]{url}                      
+\usepackage[nottoc]{tocbibind}                  
+\usepackage[british]{babel}                    
+\usepackage[marginratio={1:1, 1:1}]{geometry}   
+\usepackage{csquotes}                          
+\interfootnotelinepenalty=10000                 
+
+
+\usepackage{graphicx}
+\usepackage{float}
+\graphicspath{{/tmp/images/}}
+
+
+\newcommand{\fancyquote}[1]{{\vspace{10pt}\\{\Huge{"}}\small{\itshape#1}}\\\vspace{3pt}\\}
+
+
+\usepackage{fancyhdr}                           
+\fancypagestyle{main-content}{
+    \fancyhf{}
+    \lhead{Quotes from %(channel)s}
+    \cfoot{\thepage}
+    \setlength{\headheight}{20.96004pt}         
+    \addtolength{\topmargin}{-8.96004pt}       
+}
+\pagestyle{main-content}
+
+\usepackage{bigfoot}                
+\usepackage[shortlabels]{enumitem}  
+\usepackage{titlesec}               
+
+\usepackage{fontspec}       
+\setmainfont[
+    Contextuals={Alternate}
+]{JetBrains Mono}
+
+\begin{document}
+    \begin{titlepage}
+        \centering
+        \Huge{\textbf{Quotes from %(channel)s}} \\
+        \vfill
+        \large{Generated @ \today}\\
+        \vspace{15pt}
+    \end{titlepage}
+                          

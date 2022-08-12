@@ -21,4 +21,5 @@ token: str = vars_["TOKEN"]
 bot = commands.Bot(command_prefix="!c ", activity=discord.Game("!c help"))
 bot.load_extension("cogs.general")
 bot.load_extension("cogs.custom_commands")
+bot.load_extension("cogs.make_quotes")
 bot.run(token)
