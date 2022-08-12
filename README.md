@@ -4,7 +4,8 @@ by: @ch0rl, chorl#2222
 bot: Charlie's bot#3117
 
 
-COMMANDS:
+COMMANDS:  
+all preceded with `!c`
 Keyphrase | Explanation
 --------- | -----------
 help | Displays the help message
@@ -12,6 +13,8 @@ kill ... | If provided with the correct token, stops execution
 addcom <0> ... | Adds command <0> that responds with `...` . Anywhere in `...`, {} can be used to enclose formatting specifiers. These specifiers are: any integer - referring to the nth word *after* the command (0-indexed), and author - referring to the person invoking the command. For example, `!c addcom !hi hello {author}` would add a command that replies to `!hi` with `hello` and then the author's display name.
 editcom <0> ... | Effectively the same as above
 delcom <0> | Removes command <0>
+make_quotes_pins | Replies with a PDF of all pinned messages in that channel
+make_quotes_images | Replies with a PDF of all images in that channel
 
 Help from:  
 https://realpython.com/how-to-make-a-discord-bot-python/  
